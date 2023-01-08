@@ -1,0 +1,160 @@
+.margin1{
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.margin2{
+    margin-left: 2%;
+}
+
+img{
+    width: 75%;
+    height: 75%;
+    align-items: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+  }
+
+  .price{
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .DisPrice{
+    text-align: center;
+    font-weight: 600;
+    color: #b80028;
+  }
+
+.web-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minman(220px, auto));
+    gap: 1.5rem;
+}
+
+.product-img{
+    width: 350px !important;
+    height: 350px !important;
+}
+
+.product-box{
+    position: relative;
+}
+
+.product-box:hover {
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    transition: 0.4px;
+}
+
+.product-area {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 20px;
+    width: 350px !important;
+    height: 350px !important;
+}
+
+.product-area .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7b88aca4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0.4s ease;
+    width: 350px !important;
+    height: 350px !important;
+}
+
+.product-area .overlay-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7b88aca4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.product-area img {
+    transition: all 0.4s ease;
+    height: 100%;
+    object-fit: cover;
+    width: 350px !important;
+    height: 350px !important;
+}
+
+.product-area .overlay p{
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.product-area:hover .overlay {
+    opacity: 1;
+}
+
+.product-area:hover img{
+    transform: scale(1.1);
+}
+
+#calltoaction {
+    background-color: #8b7e757a;
+}
+
+
+
+
+/* .btn-heart{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    
+} */
+
+.btn-heart:hover{
+    background-color: transparent;
+    border: none;
+    color: #d6bde4;
+    cursor: pointer;
+}
+
+.btn-basket{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    
+}
+
+.btn-basket:hover{
+    background-color: transparent;
+    border: none;
+    color: #d6bde4;
+    cursor: pointer;
+}
+
+.btn-category{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #d6bde4;
+}

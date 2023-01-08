@@ -1,0 +1,44 @@
+.file-input {
+    display: none;
+  }
+
+  .nav-link.active, .show > .nav-link {
+    background-color: #CD853F !important;
+    border: 1px solid #DDE6FB;
+    border-radius: 4px;
+    line-height: 22px;
+    text-align: center;
+    color: white !important;
+    }
+  .nav-link {
+    margin-bottom: 5% !important;
+    color: #CD853F !important;
+    border: 2px solid #CD853F !important;      
+  }
+  .nav-tabs{
+    border-bottom: 0 !important;
+  }
+
+  .container {
+    margin: auto;
+    margin-top: 2%;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+  }
+
+  .summary{
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+h5{
+    margin-top: 4vh;
+}
+  
+

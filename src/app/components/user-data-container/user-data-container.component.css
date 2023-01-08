@@ -1,0 +1,58 @@
+.file-input {
+    display: none;
+  }
+
+  .nav-link.active, .show > .nav-link {
+    background-color: #CD853F !important;
+    border: 1px solid #DDE6FB;
+    border-radius: 4px;
+    line-height: 22px;
+    text-align: center;
+    color: white !important;
+    }
+  .nav-link {
+    margin-bottom: 5% !important;
+    color: #CD853F !important;
+    border: 2px solid #CD853F !important;      
+  }
+  .nav-tabs{
+    border-bottom: 0 !important;
+  }
+
+  .container {
+    margin: auto;
+    margin-top: 2%;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+  }
+
+  .btn{
+    background-color: #CD853F;
+    border-color: #CD853F;
+    color: white;
+    width: 50%;
+    font-size: 0.7rem;
+    padding: 1vh;
+    border-radius: 0;
+    margin-left: 2%;
+    margin-top: 2.5%;
+    height: 65%;
+    border-radius: 6px; 
+}
+
+
+.margin{
+    margin-top: 2vh;
+    margin-bottom: 2vh
+}
+
+.margin-top{
+    margin-top: 1%;
+}
+
+input{
+    text-align:center;
+ }

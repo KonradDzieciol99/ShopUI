@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid ">
+      <a class="navbar-brand text-light" routerLink="../landing-page">INA</a>
+      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
+      <button class ="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isMenuCollapsed = !isMenuCollapsed"></button>
+
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="../home-page" (click)="isMenuCollapsed = true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="../products-page" (click)="isMenuCollapsed = true">Shop</a>
+          </li>
+          <li class="nav-item " id="IMPORTANT" *ngIf="this.accountService.currentUser$|async" >
+              <a *appHasRole='["Admin"]' routerLink="../admin-page" class="nav-link text-light" (click)="isMenuCollapsed = true">Admin Panel</a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" routerLink="../basket-page" (click)="isMenuCollapsed = true">
+                <i class=" fa-solid fa-lg fa-basket-shopping position-relative">
+                  <span *ngIf="(BasktemItemsCount|async) != 0" style="font-size: 11px;" class="position-absolute top-100 start-50 badge rounded-pill bg-danger">{{BasktemItemsCount|async}}</span>
+                </i>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" routerLink="../orders" (click)="isMenuCollapsed = true">
+              Orders
+            </a>
+          </li>
+          <li *ngIf="user" class="nav-item">
+            <button  class="btn-logout btn-outline-warning" type="button" (click)="logout()" (click)="isMenuCollapsed = true">logout</button>
+          </li>
+          <li *ngIf="!user" class="nav-item">
+            <button  class="btn btn-outline-success btn-login" type="button" (click)="login()" (click)="isMenuCollapsed = true">login</button>
+          </li>
+          <li *ngIf="user" class="nav-item" ngbDropdown>
+            <a class="nav-link text-light" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> {{user.name}}</a>
+            <div ngbDropdownMenu class="dropdown-menu">
+              <a ngbDropdownItem routerLink="../orders" (click)="$event.preventDefault()">Orders</a>
+              <a ngbDropdownItem routerLink="../account" (click)="$event.preventDefault()">Moje dane</a>
+              <a ngbDropdownItem routerLink="../account/address" (click)="$event.preventDefault()">Adress dostawy</a>
+            </div>
+          </li>
+          
+        </ul>
+        <div>
+          <input (keyup.enter)="onSearch()" class="form-control me-2" type="text" [formControl]="searchPhrase" placeholder="Search" aria-label="Search">
+          <button (click)="onSearch()" class="btn btn-outline-success" type="button">Search</button>
+          <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">Reset</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  

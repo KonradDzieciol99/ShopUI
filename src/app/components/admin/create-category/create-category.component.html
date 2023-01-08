@@ -1,0 +1,33 @@
+<div class="col margin"><h4><b>Category creation</b></h4></div>
+
+<div>
+    <form [formGroup]="categoryCreateForm" class="mx-1 mx-md-4">
+  
+        <div class="d-flex flex-row align-items-center mb-4">
+          <div class="form-outline flex-fill mb-0 margin-top">           
+            <input [class.is-invalid] = "categoryName?.invalid && categoryName?.touched"
+            type="text" id="categoryName" formControlName="categoryName" class="form-control margin-top" placeholder="Enter category here" required/>
+            <div *ngIf="(categoryName?.invalid && categoryName?.touched) || categoryName?.dirty">
+              <small *ngIf="categoryName?.errors?.['required']" class="text-danger">Category name is required</small>
+              <small *ngIf="categoryName?.errors?.['minlength']" class="text-danger">Category must be at least 3 characters long</small><br>
+              <small *ngIf="categoryName?.errors?.['pattern']" class="text-danger">Category can't have numbers</small>
+            </div>
+            <label class="form-label margin-top margin">Category</label>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+        <button class="btn" (click)="create()" >CREATE</button>
+    </div>
+      </form>
+</div>
+
+
+
+
+<!--<app-form-w-v
+[formGroup]="categoryCreateForm"
+[nameFormControl]="'categoryName'"
+[validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+[readonly]="false"
+>
+</app-form-w-v>-->

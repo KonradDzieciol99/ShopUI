@@ -1,0 +1,120 @@
+.footer-top {
+    padding-top: 80px 0;
+    padding-bottom: 30px;
+    color:#4d4f51;
+    background-color: #ffffff;
+    margin-top: 2%;
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) ;
+}
+
+.footer-top .footer-links a  {
+    color: #212529;
+    display:block;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+    line-height: 120%;
+    text-decoration: none;
+}
+
+.footer-top .footer-links a:hover {
+    color: #06498b;
+    text-decoration: none;
+}
+
+.footer-top ul  {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:15px;
+  margin-bottom:0;
+  font-weight: 500;
+  text-align: center;
+}
+
+.footer-top ul  a{
+    text-decoration: none;
+    color: #212529;
+}
+.footer-top ul a:hover {
+    opacity:0.8;
+    color: #06498b;
+    text-decoration: none;
+ }
+
+.mb {
+    color: #212529;
+    font-size: 24px;
+    line-height: 80%;
+    text-align: center;
+}
+
+.footer-top p{
+    font-size: 14px;
+    text-align: left;
+}
+
+.title-sm {
+    font-size: 17px;
+    text-align: center;
+    color: #212529;
+    text-transform: uppercase;
+    font-weight: 750;
+    
+}
+
+
+.footer-top .logo-text {
+    text-align: center;
+    font-weight: 700;
+}
+
+
+.fa-brands {
+    padding: 12px;
+    margin: 14px;
+  }
+
+.social-icons-1 a {
+    color: #212529;
+    transition: all 0.4s ease;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.social-icons-1 a:hover {
+    color: #06498b;
+    text-decoration: none;
+}
+
+
+
+.jumbotron {
+    background-color: transparent;
+    margin-top: 50px;
+    
+}
+
+.mb-0 {
+    font-size: 9px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* .row {
+    padding-top: 50px;
+} */
+
+.footer-top {
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+.footer-bottom{
+    margin: 0;
+}
+

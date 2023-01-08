@@ -1,0 +1,144 @@
+<section class="section-pagetop">
+    <div class="container">
+        <h2 class="margin1">Produkty</h2>
+        <nav>
+            <ol class="breadcrumb margin2">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item">Produkty</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<section class="section-content padding-y">
+    <div class="container">
+
+        <div class="row">
+            <aside class="col-md-3">
+
+                <div class="card">
+                    <article class="filter-group">
+                        <header class="card-header">
+                            <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                                <i class="icon-control fa fa-chevron-down"></i>
+                                <h6 class="title">Cena</h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse_3">
+                            <form [formGroup]="priceForm" #priceFormId>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="exampleFormControlInput1" class="form-label">Od</label>
+                                            <input type="number" formControlName="priceFrom" pattern="[0-9]"
+                                                class="form-control" placeholder="np.od 10zł">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="exampleFormControlInput1" class="form-label">Do</label>
+                                            <input type="number" formControlName="priceTo" pattern="[0-9]"
+                                                class="form-control" placeholder="np. do 100zł">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                    <article class="filter-group">
+                        <header class="card-header">
+                            <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+                                <i class="icon-control fa fa-chevron-down"></i>
+                                <h6 class="title">Kategorie</h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse_1">
+                            <div class="card-body">
+                                <form [formGroup]="categoriesForm">
+                                    <div formArrayName="selectedCategories">
+                                        <div *ngFor="let category of selectedCategories.controls; let i=index">
+                                            <input type="checkbox" [checked]="selectedCategories.at(i).value.checked"
+                                                [value]="selectedCategories.at(i).value.categoryName"
+                                                (change)="onCategoryCheckboxChange($event)" />
+                                            {{categoriesCheckbox[i].categoryName}}
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> <!-- card-body.// -->
+                        </div>
+                    </article> <!-- filter-group  .// -->
+                    <article class="filter-group">
+                        <header class="card-header">
+                            <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+                                <i class="icon-control fa fa-chevron-down"></i>
+                                <h6 class="title">Marki</h6>
+                            </a>
+                        </header>
+                        <div class="filter-content collapse show" id="collapse_2">
+                            <div class="card-body">
+                                <form [formGroup]="brandsForm">
+                                    <div formArrayName="selectedBrands">
+                                        <div *ngFor="let brand of selectedBrands.controls; let i=index">
+                                            <input type="checkbox" [checked]="selectedBrands.at(i).value.checked"
+                                                [value]="selectedBrands.at(i).value.brandName"
+                                                (change)="onBrandCheckboxChange($event)" />
+                                            {{brandsCheckbox[i].brandName}}
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+            <main class="col-md-9">
+
+                <header class="border-bottom mb-4 pb-3">
+                    <div class="form-inline">
+                        <select [formControl]="sortForm" (change)="onSortSelected()" class="mr-2 form-control">
+                            <option *ngFor="let sort of sortOptions" [ngValue]="sort">
+                                {{ sort.name }}
+                            </option>
+                        </select>
+
+                    </div>
+                </header>
+
+                <div class="row">
+                    <div *ngFor="let item of products " class="col-lg-4 col-sm-6">
+                        <div class="product-area">
+                           
+                            <img [src]='item?.photos?.at(0)?.url' class="product-img" class="center">
+                            
+                            <div class="overlay">
+                                <a [routerLink]="['/product-page',item.id]"><button class="overlay-button"></button></a>
+                                <p class="price">{{item.productName}}</p>
+                                <ng-container *ngIf="item.cutPrice; then cutPrice; else regularPrize"> </ng-container>
+                                <ng-template #cutPrice>
+                                    <del class="price">{{item.price}} PLN</del>
+                                    <span class="DisPrice">{{item.cutPrice}} PLN</span>
+                                </ng-template>
+                                <ng-template #regularPrize>
+                                    <span class="price">{{item.price}} PLN</span>
+                                </ng-template>
+                                <div class="btn-group">
+                                    <button class="btn-basket" (click)="addItemToBasket(item)"><i
+                                            class="fa fa-shopping-basket"></i></button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center" *ngIf="currentPagination">
+                    <ngb-pagination [boundaryLinks]="true" [collectionSize]="currentPagination.totalCount"
+                        [(page)]="currentPagination.currentPage" (pageChange)="pageChanged($event)"
+                        [pageSize]="currentPagination.pageSize" previousText="&lsaquo;" nextText="&rsaquo;"
+                        firstText="&laquo;" lastText="&raquo;">
+                    </ngb-pagination>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+</section>

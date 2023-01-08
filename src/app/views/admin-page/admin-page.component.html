@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <div [ngbNavItem]="1">
+            <a ngbNavLink>Create Category</a>
+            <ng-template ngbNavContent>
+                <app-create-category></app-create-category>
+            </ng-template>
+        </div>
+        <div [ngbNavItem]="2">
+            <a ngbNavLink>Create brand</a>
+            <ng-template ngbNavContent >
+                <app-create-brand></app-create-brand>
+
+            </ng-template>
+        </div>
+        <div [ngbNavItem]="3">
+            <a ngbNavLink>Create Product</a>
+            <ng-template ngbNavContent >
+                <app-create-product></app-create-product>
+
+            </ng-template>
+        </div>
+    
+    </div>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+</div>
+
+
+{{active}}
+
+
+
+

@@ -1,0 +1,11 @@
+<div class="border border-primary">
+{{basketItem.productName}}
+{{basketItem.price}}
+{{basketItem.quantity}}
+{{basketItem.pictureUrl}}
+{{basketItem |json}}
+
+<button type="button" (click)="removeBasketItem(basketItem)" class="btn btn-primary">removeBasketItem</button>
+<button type="button" (click)="incrementItemInBasket(basketItem)" class="btn btn-primary">incrementItemInBasket</button>
+<button type="button" (click)="decrementItemInBasket(basketItem)" class="btn btn-primary">decrementItemInBasket</button>
+</div>

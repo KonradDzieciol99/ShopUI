@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="col margin"><h4><b>Twoje dane</b></h4></div>
+
+  <form [formGroup]="accountDataForm">
+
+  
+ <app-user-data-container
+      [formGroup]="accountDataForm"
+      [nameFormControl]="'userName'"
+      [validatorsNames]="[]"
+      (cancelEvent)="pathValues()"
+    >
+    </app-user-data-container>
+    <app-user-data-container
+      [formGroup]="accountDataForm"
+      [nameFormControl]="'surName'"
+      [validatorsNames]="[]"
+      (cancelEvent)="pathValues()"
+    >
+    </app-user-data-container>
+    <app-user-data-container
+    [formGroup]="accountDataForm"
+    [nameFormControl]="'phoneNumber'"
+    [validatorsNames]="[]"
+    (cancelEvent)="pathValues()"
+    >
+    </app-user-data-container>
+ 
+    <app-user-data-container
+      [formGroup]="accountDataForm"
+      [nameFormControl]="'email'"
+      [validatorsNames]="[]"
+      (cancelEvent)="pathValues()"
+    >
+    </app-user-data-container>
+    <app-user-data-container
+      [formGroup]="accountDataForm"
+      [nameFormControl]="'password'"
+      [validatorsNames]="[]"
+      (cancelEvent)="pathValues()"
+    >
+    </app-user-data-container>
+  </form>
+</div>

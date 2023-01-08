@@ -1,0 +1,44 @@
+.btn {
+    background-color:#212529;
+    border-radius: 50px; 
+    color: white;
+    align-content: center;
+    border: none;
+    font-size: 17px;
+}
+
+.btn:hover {
+    background-color: #06498b;   
+}
+
+.link-primary {
+    text-decoration: none;
+    color: #212529;
+}
+
+.link-primary:hover{
+    color: #06498b;
+
+}
+
+.form-control{
+    /* border: 1px solid #8b7e757a; */
+    background-color: #a1a3a598;
+    color: white; 
+    border-radius: 30px; 
+    padding: 10px; 
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.bg {
+    width: 100vw;
+  min-height: 100vh;
+    background-color: #4d4f51;
+}
+
+.card{
+    margin-top: 130px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+}

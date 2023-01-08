@@ -1,0 +1,15 @@
+<div [formGroup]="formGroup">
+    <label for="exampleFormControlInput1" class="form-label">{{nameFormControl}}</label>
+    <input type="email" 
+        [readonly]="readonly"
+        class="form-control"
+        [formControlName]="nameFormControl" 
+        [class.is-valid]="formGroup.get(nameFormControl)?.valid && (formGroup.get(nameFormControl)?.dirty || formGroup.get(nameFormControl)?.touched) && !readonly"
+        [class.is-invalid]="formGroup.get(nameFormControl)?.invalid && (formGroup.get(nameFormControl)?.dirty || formGroup.get(nameFormControl)?.touched) && !readonly" />
+        <div *ngFor="let item of validatorsKeyValue" class="invalid-feedback">
+            <span *ngIf="formGroup.get(nameFormControl)?.hasError(item.key) && !readonly">{{item.value}}</span>
+        </div>
+</div>
+    <!-- <small  *ngFor="let validatorName of validatorsNames" class="text-danger" >
+        <span *ngIf="formGroup.get(nameFormControl)?.hasError(validatorName)">Error {{validatorName}}.</span>
+    </small> -->

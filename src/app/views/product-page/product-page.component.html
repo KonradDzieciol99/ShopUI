@@ -1,0 +1,66 @@
+<div class="container mt-5 mb-5">
+  <div class="row d-flex justify-content-center margin">
+      <div class="col-md-10">
+          <div class="card">
+              <div class="row">
+                  <div id="carouselExampleControls" class="col-md-6 carousel slide" data-ride="carousel">
+                    <div class="images p-2 margin1">
+                        <div class="carousel-item active">
+                       
+                          <ng-template [ngIf]="product && product.photos && product.photos.length > 1" [ngIfElse]="MoreThan2Photos">
+                            <ngb-carousel >
+                              <ng-template ngbSlide *ngFor="let photo of product?.photos ; let i = index">
+                                <div class="picsum-img-wrapper">
+                                  <img [src]="photo.url" alt="Random first slide" width="250" height="250" />
+                                </div>
+                              </ng-template>
+                            </ngb-carousel>
+                          </ng-template>
+                          
+                          <ng-template #MoreThan2Photos>
+                          <span *ngFor="let photo of product?.photos">
+                              <img id="main-image" [src]='photo?.url' class="product-img" width="250" height="250" >
+                          </span>
+                          </ng-template>
+
+                        </div>   
+              </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="product p-4">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center"> <i class="fa fa-long-arrow-left"></i> <a class="nav-link" routerLink="/products-page"><button class="btn">Back</button></a></div>
+                          </div>
+                          <div class="mt-4 mb-3"> 
+
+                            <span class="text-uppercase ">{{product?.productName}}</span>                           
+                              <h5 class="text-uppercase">{{product?.categoryOfProduct?.categoryName}}</h5>
+                              <div class="price d-flex flex-row align-items-center"> 
+                                <ng-container *ngIf="product?.cutPrice; then cutPrice; else regularPrize"> </ng-container>
+                          <ng-template #cutPrice>
+                            <del  class="price">{{product?.price}} PLN</del><span>&nbsp;&nbsp;</span>
+                            <span class="act-price">{{product?.cutPrice}} PLN</span>
+                          </ng-template>
+                          <ng-template #regularPrize>
+                            <span  class="act-price">{{product?.price}} PLN</span>
+                          </ng-template>
+                                
+                              </div>
+                          </div>
+                          <h5 class="text-uppercase text-muted brand">Ilość: {{product?.quantity}}</h5>
+
+                          <p class="about">{{product?.description}}</p>
+                          
+                          <div class="cart mt-4 align-items-center">
+                            <button class="btn btn-danger text-uppercase mr-2 px-4" (click)="product ? addItemToBasket(product) : undefined">Dodaj do koszyka</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+ 
+
+

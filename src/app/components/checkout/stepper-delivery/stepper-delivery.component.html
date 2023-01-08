@@ -1,0 +1,29 @@
+<div class="mt-4" >
+    <h4 class="mb-3 margin">Choose a delivery method</h4>
+    <div class="col" [formGroup]="deliveryForm">
+        <div class="col-12 form-group" *ngFor="let method of deliveryMethods">
+            <input type="radio" class="btn-check" name="options" autocomplete="off"
+                id={{method.id}}
+                (click)="setShippingPrice(method)"
+                value={{method.id}}
+                formControlName="deliveryMethod"
+                
+            >
+            <label for="{{method.id}}" class="btn btn-secondary text">
+                <strong>{{method.shortName}} - {{method.price | currency}}</strong>
+            <br>
+                <span class="">{{method.description}}</span>
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5 margin3">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+        <i class="fa fa-angle-left"></i> Back to address
+    </button>
+    <button [disabled]="deliveryForm.invalid" class="btn btn-primary" (click)="createtIntent()">
+        Go to payment <i class="fa fa-angle-right"></i>
+    </button>
+</div>

@@ -1,0 +1,43 @@
+
+<div class="container">  
+    <div class="col margin"><h4><b>Zamówienia</b></h4></div>
+    <form>
+        <div class="mb-3 row">
+            <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Wyszukaj zamówienie:</label>
+            <div class="col-xs-3 col-sm-auto">
+                <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter" />
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Numer zamówienia</th>
+                <th scope="col">Email</th>
+                <th scope="col">Data zamówienia</th>
+                <th scope="col">Metoda dostawy</th>
+                <th scope="col">Cena dostawy</th>
+                <th scope="col">Kwota</th>
+                <th scope="col">Status</th>
+                <th scope="col">Kwota</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+               
+                <td><ngb-highlight [result]="order.id | number"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.buyerEmail"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.orderDate"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.deliveryMethod"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.shippingPrice | number"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.subtotal | number"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.status"></ngb-highlight></td>
+                <td><ngb-highlight [result]="order.total| number"></ngb-highlight></td>
+            </tr>
+        </tbody>
+    </table>
+    <span *ngIf="!orders">Nie masz żadnych zamówień</span>
+</div>

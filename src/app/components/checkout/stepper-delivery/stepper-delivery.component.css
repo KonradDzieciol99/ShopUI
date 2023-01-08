@@ -1,0 +1,38 @@
+.margin{
+    margin-left: 1%;
+
+}
+
+
+.margin1{
+    margin-left: 2%;
+    margin-bottom: 2.5%;
+
+}
+
+.margin2{
+    margin-bottom: 4%;
+}
+
+.margin3{
+    margin-top: 8%;
+}
+
+.btn{
+    background-color: #CD853F;
+    border-color: #CD853F;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 1%;
+    padding: 1vh;
+    border-radius: 0;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 6px; 
+    transition: all 0.4s ease;
+}
+
+.text{
+    font-size: smaller;
+}

@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'name'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'surName'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'street'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'city'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'state'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'zipCode'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <div class="mb-3 col-6">
+        <app-form-w-v
+        [formGroup]="addressForm"
+        [nameFormControl]="'phoneNumber'"
+        [validatorsKeyValue]="[{key: 'required', value: 'Field is required.'}]"
+        [readonly]="readonly"
+        >
+        </app-form-w-v>
+    </div>
+    <!-- <button *ngIf="!readonly" type="submit" [disabled]="!addressForm.valid">submit</button>
+    <button *ngIf="!readonly" type="button" (click)="readonly=true; pathValues()" >Cancel</button>
+    <button *ngIf="readonly" type="button" (click)="readonly=false;" >Edit</button> -->
+</div>

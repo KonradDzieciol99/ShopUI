@@ -1,0 +1,25 @@
+.margin{
+    margin-left: 1%;
+
+}
+
+.margin1{
+    margin-left: 2%;
+    margin-bottom: 2.5%;
+
+}
+
+.btn{
+    background-color: #CD853F;
+    border-color: #CD853F;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 1%;
+    padding: 1vh;
+    border-radius: 0;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-radius: 6px;
+
+}

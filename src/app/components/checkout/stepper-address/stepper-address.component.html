@@ -1,0 +1,83 @@
+<div class="mt-4" [formGroup]="addressForm">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="col margin">Recipient's details</h4>
+        <!-- <button 
+            (click)="saveUserAddress()" 
+            class="btn btn-outline-success mb-3"
+            [disabled]="!addressForm.valid || !addressForm.dirty"
+        >
+            Save as default address
+        </button> -->
+    </div>
+    <div *ngIf="savedAddress;else enterAddres">
+        <div class="margin1">
+        <span>Saved address:</span>
+        </div>
+        <div class="row">
+    <div class="mb-3 col-6">
+       <b> Name: </b>{{savedAddress.name}}
+    </div>
+    <div class="mb-3 col-6">
+       <b>Surname: </b>{{savedAddress.surName}}
+    </div>
+    <div class="mb-3 col-6">
+       <b> City:</b> {{savedAddress.city}}
+    </div>
+    <div class="mb-3 col-6">
+       <b> Zip code: </b>{{savedAddress.zipCode}}
+    </div>
+    <div class="mb-3 col-6">
+       <b> Street and house number:</b> {{savedAddress.street}}
+    </div>
+    <div class="mb-3 col-6">
+       <b> Phone: </b>{{savedAddress.phoneNumber}}
+    </div>
+    </div>
+    </div>
+    <ng-template #enterAddres>
+        <app-address-forms 
+            [addressForm]="addressForm"
+            [readonly]="false"
+        >
+        </app-address-forms>
+    </ng-template>
+    <!-- <div class="row" formGroupName="addressForm">
+        <div class="form-group col-6">
+            name<input formControlName="name">
+        </div>
+        <div class="form-group col-6">
+            surName<input formControlName="surName">
+        </div>
+        <div class="form-group col-6">
+            street<input formControlName="street">
+        </div>
+        <div class="form-group col-6">
+            city<input formControlName="city">
+        </div>
+        <div class="form-group col-6">
+            state<input formControlName="state">
+        </div>
+        <div class="form-group col-6">
+            zipCode<input formControlName="zipCode">
+        </div>
+        <div class="form-group col-6">
+            phoneNumber<input formControlName="phoneNumber">
+        </div>
+    </div> -->
+</div>
+
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" routerLink="/basket-page">
+        <i class="fa fa-angle-left"></i> Back to basket
+    </button>
+    <button *ngIf="!savedAddress" (click)="saveUserAddress()" class="btn btn-outline-success" [disabled]="!addressForm.valid || !addressForm.dirty">
+        Save new delivery details
+    </button>
+    <button *ngIf="savedAddress" (click)="savedAddress=null" class="btn btn-outline-success">
+    Change delivery details
+    </button>
+    <button [disabled]="addressForm.invalid" class="btn btn-primary" cdkStepperNext>
+        Go to delivery <i class="fa fa-angle-right"></i>
+    </button>
+</div>
+

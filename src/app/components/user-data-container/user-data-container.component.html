@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup" (ngSubmit)="updateData()">
+<div class="row justify-content-between align-content-center border p-3 " >
+    <div class="col-6 d-flex ">
+        <div class="d-flex align-items-center margin"> 
+            {{nameFormControl}}:
+        </div>
+        <div class="mx-3 d-flex align-items-center ">
+            <span *ngIf="!edit">{{formGroup.get(nameFormControl)?.value}}</span>
+            <div>
+            <input *ngIf="edit" type="email" formControlName="{{nameFormControl}}" class="form-control" >
+                <small  *ngFor="let validatorName of validatorsNames" class="text-danger" >
+                    <span *ngIf="formGroup.get(nameFormControl)?.hasError(validatorName)">Error {{validatorName}}.</span>
+                </small>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <button *ngIf="!edit" type="button" (click)="edit=!edit" class="btn btn-primary">Zmień</button>
+        <button *ngIf="edit" type="submit"  class="btn btn-primary" >Zapisz</button>
+        <button *ngIf="edit" type="button" (click)="edit=!edit; cancel()" class="btn btn-primary">Anuluj</button>
+    </div>
+</div>
+</form>
+<!-- (click)="updateData()" -->
+<!-- (ngSubmit)="onSubmit(myForm)"  '{{nameFormControl}}'-->

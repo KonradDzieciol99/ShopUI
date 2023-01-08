@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="col margin"><h4><b>Dane do dostawy</b></h4></div>
+    <form [formGroup]="addressForm" (ngSubmit)="updateAddress()" class="mx-1 mx-md-4 ">
+    <div class="row">
+        <div class="mb-3 col-6">
+            <input 
+            formControlName="name" class="form-control margin-top" placeholder="Tutaj wpisz imię" [readonly]="readonly" required/>
+            
+            <label class="form-label margin-top margin">Imię</label>    
+        </div>
+        <div class="mb-3 col-6">
+            <input formControlName="surName" class="form-control margin-top" placeholder="Tutaj wpisz nazwisko" [readonly]="readonly" required/>
+            <label class="form-label margin-top margin">Nazwisko</label>    
+        </div>
+        <div class="mb-3 col-6">
+            <input formControlName="street" class="form-control margin-top" placeholder="Tutaj wpisz ulicę" [readonly]="readonly" required/>
+            <label class="form-label margin-top margin">Ulica</label>    
+        </div>
+        <div class="mb-3 col-6">
+            <input formControlName="city" class="form-control margin-top" placeholder="Tutaj wpisz miasto" [readonly]="readonly" required/>
+            <label class="form-label margin-top margin">Miasto</label>    
+        </div>
+        <div class="mb-3 col-6">
+            <input formControlName="state" class="form-control margin-top" placeholder="Tutaj wpisz województwo" [readonly]="readonly" required/>
+            <label class="form-label margin-top margin">Województwo</label>    
+        </div>
+        <div class="mb-3 col-6">
+            <input formControlName="zipCode" class="form-control margin-top" placeholder="Tutaj wpisz kod pocztowy" [readonly]="readonly" required/>
+            <label class="form-label margin-top margin">Kod pocztowy</label>    
+        </div>
+        <div class="mb-3 col-6">
+            <input formControlName="phoneNumber" class="form-control margin-top" placeholder="Tutaj wpisz numer telefonu" [readonly]="readonly" required/>
+            <label class="form-label margin-top margin">Numer telefonu</label>    
+        </div>
+        <div class="d-flex justify-content-center">
+        <button class="btn" *ngIf="!readonly" type="submit" [disabled]="!addressForm.valid">Zatwierdź dane</button>
+        </div>    
+        <div class="d-flex justify-content-center">
+            <button class="btn1" *ngIf="!readonly" type="button" (click)="readonly=true; pathValues()" >Anuluj edycję danych</button>
+            </div> 
+            <div class="d-flex justify-content-center">
+                <button class="btn" *ngIf="readonly" type="button" (click)="readonly=false;" >Edytuj dane</button>
+                </div> 
+    </div>
+    </form>
+</div>

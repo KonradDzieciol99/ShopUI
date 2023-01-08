@@ -1,0 +1,43 @@
+h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+p{
+    text-align: center;
+    font-size: 18px;
+}
+
+.icon {
+    /* display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: middle; */
+/* margin-top: 30px;
+left: 50%;
+transform: translate(-50%,-50%);   */
+display:flex;
+justify-content: center;
+
+}
+
+.btn{
+    background-color:#212529;
+    border-radius: 50px; 
+    
+    color: white;
+    border: none;
+    /* display:flex;
+    justify-content: center; */
+
+
+}
+
+.btn:hover {
+    background-color: #06498b; 
+}
+
+.checkit{
+    text-align: center;
+}

@@ -1,0 +1,44 @@
+ <!-- FIRST LOOK -->
+ <section id="home">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-10"> <!--kolumna medium z 10 kolumnami -->
+          <h1 class="text-gray display-4">PRESS PLAY TO GAMING</h1> <!-- display-4 wiekszy styl naglowka -->
+          <p class="text-gray" >Start your adventure in gaming with our accessories to achive the best experience during your raising in every game.</p>
+          <a href="/products-page" class="btn btn-brand">Shop now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SALE CAROUSEL -->
+
+  <section id="carouselowl">
+    <h2> SALE </h2>
+    <div class="row">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide  *ngFor="let slide of ProductOnSale">
+        <div class="product-area">
+          <span *ngFor="let photo of slide?.photos">
+        <img [src]='photo.url' class="product-img" class="center">
+          </span>
+          <div class="overlay">
+            <!-- <a [routerLink]="['/product-page',slide.id]"><button class="overlay-button"></button></a> -->
+              <p class="center">{{slide.productName}}</p>
+              <span class="DisPrice">{{slide.cutPrice}} PLN</span>
+              <del class="price">{{slide.price}} PLN</del>
+              <div class="btn-group">
+                <a [routerLink]="['/product-page',slide.id]"><button class="go-to"><i class="fa fa-eye"></i></button></a>
+                  <button class="btn-basket" (click)="addItemToBasket(slide)"><i class="fa fa-shopping-basket"></i></button>
+              </div>
+          </div>
+      </div>
+      </ng-template>
+      
+    
+    </owl-carousel-o>
+  </div>
+    </section>
+
+ 

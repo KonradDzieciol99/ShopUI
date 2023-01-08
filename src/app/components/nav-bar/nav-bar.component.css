@@ -1,0 +1,126 @@
+.navbar-nav .nav-link {
+    /* position:relative; */
+    /* font-size: 21px; */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-top: 10px;
+    color: #ffffff;
+
+}
+ .navbar-nav:hover .nav-link:hover {
+    color: #06498b;
+} 
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 10px 0; */
+}
+
+.navbar {
+    border-bottom: 0px solid rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+}
+
+/* .navbar .li {
+    display:inline;
+    text-align: center;
+    margin: 15px auto;
+} */
+
+/* #navbarCollapse ul li {
+    display: inline-block;
+} */
+
+/* ul {
+    display: table;
+}
+
+li {
+    display: table-cell;
+} */
+
+/* .container-fluid {
+    max-width: 1100px;
+    margin: auto;
+    width: 100%;
+} */
+
+.navbar-toggle {
+    position: absolute;
+    top: 26px;
+    right: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+  }
+
+.navbar-brand {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color:#ffffff !important;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.btn{
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-family: var(--font-base), sans-serif;
+    font-size: 15px;
+    /* transition: all 0.4s ease; */
+    color: #ffffff;
+    align-items: center;
+    cursor: pointer;
+    background-color: #4d4f51;
+    border: none;
+    margin-right: 10px;
+    
+}
+
+.btn-logout{
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 17px;
+    border-radius: 50px;
+    font-family: var(--font-base), sans-serif;
+    font-size: 15px;
+    /* transition: all 0.4s ease; */
+    color: #ffffff;
+    align-items: center;
+    cursor: pointer;
+    background-color: #4d4f51;
+    border: none;
+    margin-right: 7px;
+    margin-top: 12px; 
+}
+
+.btn:hover {
+    padding: 8px 20px;
+    background-color: #06498b;
+}
+
+.btn-login {
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+/* .nav-item {
+    color: #ffffff;
+}
+
+.nav-item:hover {
+    color: #06498b;
+} */
+
+.form-control {
+    border-radius: 50px;
+}

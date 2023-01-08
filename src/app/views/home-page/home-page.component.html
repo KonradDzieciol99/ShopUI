@@ -1,0 +1,117 @@
+
+<!-- INFO KARUZELA -->
+
+<section id="carouselowl">
+  <div class="row">
+  <owl-carousel-o [options]="InfoCustomOptions">
+    <ng-template carouselSlide>
+      <div class="slide">
+        <div class="product-area">
+        <img src="./assets/images/testad.jpg" alt="img 1" >
+        <div class="overlay">
+            <div class="btn-group">
+              <a [routerLink]="['/products-page']"><button class="go-to"><i class="fa fa-eye"></i></button></a>
+            </div>
+            </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slide">
+        <div class="product-area">
+        <img src="./assets/images/ad2test.jpg" alt="img 2">
+        <div class="overlay">
+            <div class="btn-group">
+              <a [routerLink]="['/product-page']"><button class="go-to"><i class="fa fa-eye"></i></button></a>
+            </div>
+        </div>
+      </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+  </section>
+ 
+<!--SALE COUNTDOWN  -->
+
+
+
+
+<!-- KAFELKI -->
+<section id="tiles">
+  <h2>CATEGORY</h2>
+  <div class="grid margin">
+    <button  *ngFor="let category of categories"
+    [routerLink]="['../products-page']"
+    [queryParams]="{categories:category.categoryName}"
+     class="btn-grid yellow"
+     >
+      {{category.categoryName}}
+    </button>
+  </div>
+</section>
+
+
+
+<!-- MAPA i INFO-->
+<section id="contact">
+    <div class="container">
+      <h1 class="section-name">Find us & contact us</h1>
+      <div class="hline"></div>
+        <div class="two-col-grid">
+          <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d6995.093477248252!2d17.425763699803213!3d51.69390109153277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e2!4m5!1s0x4705465425bb1be3%3A0xe0b2ae72f6e644d4!2sPiastowska%2023%2C%2063-700%20Krotoszyn%2C%20Poland!3m2!1d51.6946519!2d17.4362002!4m4!1s0x4705465425bb1be3%3A0xe0b2ae72f6e644d4!3m2!1d51.6946519!2d17.4362002!5e0!3m2!1sen!2s!4v1651248543114!5m2!1sen!2s" frameborder=”0″ style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <form role="contactForm" [formGroup]="contactForm" (ngSubmit)="onContactMessageSubmit()">
+            
+            <div class="form-group">
+              <label>Email</label>
+              <input [class.is-invalid] = "email?.invalid && email?.touched"
+              type="email" formControlName="email" class="form-control" placeholder="Your email" name="email" ngModel [email]="true" required/>
+              <div *ngIf="(email?.invalid && email?.touched) || email?.dirty">
+                <small *ngIf="email?.errors?.['required']" class="text-danger">Email is required</small>
+                <small *ngIf="email?.errors?.['pattern']" class="text-danger">Please provide a valid email address</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Subject</label>
+              <input [class.is-invalid] = "subject?.invalid && subject?.touched"
+              type="text" formControlName="subject" class="form-control" placeholder="Your subject">
+              <div *ngIf="(subject?.invalid && subject?.touched)">
+                <small *ngIf="subject?.errors?.['required']" class="text-danger">Subject is required</small>
+                <small *ngIf="subject?.errors?.['minlength']" class="text-danger">Subject must be at least 3 characters long</small>
+                <small *ngIf="subject?.errors?.['maxlength']" class="text-danger">Subject must have a maximum of 50 characters long</small>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea [class.is-invalid] = "message?.invalid && message?.touched"
+              formControlName="message" class="form-control" placeholder="Your message">
+              </textarea>
+              <div *ngIf="(message?.invalid && message?.touched)">
+                <small *ngIf="message?.errors?.['required']" class="text-danger">Message is required</small>
+                <small *ngIf="message?.errors?.['minlength']" class="text-danger">Message must be at least 10 characters long</small>
+              </div>
+            </div>
+            <button class="btn" type="submit">Send</button>
+          </form>
+
+        </div>
+    </div>
+    </section>
+
+<!-- CALL TO ACTION -->
+
+<section id="calltoaction" class="py-5"> <!-- padding top i bottom $spacer *3-->
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="text-gray">YOUR TIME HAVE COME, JOIN OUR PARTY</h3>
+      </div>
+      <a href="#" class="btn btn-light">Here</a>
+    </div>
+  </div>
+</section>
+
+
+
